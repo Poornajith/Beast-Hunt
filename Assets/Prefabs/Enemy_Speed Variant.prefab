@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.70457715
       objectReference: {fileID: 0}
+    - target: {fileID: 6097484576608220425, guid: 7e77c9eae45357e44b47a1cdbbc1fabb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.336
+      objectReference: {fileID: 0}
     - target: {fileID: 6183911821109587490, guid: 7e77c9eae45357e44b47a1cdbbc1fabb, type: 3}
       propertyPath: speed
       value: 3

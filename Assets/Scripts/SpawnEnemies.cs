@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class SpawnEnemies : MonoBehaviour
 {
+    public static SpawnEnemies Instance;
     [SerializeField] private GameObject normalEnemyPrefab;
     [SerializeField] private GameObject speedEnemyPrefab;
     [SerializeField] private GameObject strongEnemyPrefab;
@@ -16,14 +17,18 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField] private int maxStrongEnemies = 3;
 
     private List<GameObject> enemyPrefabs;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         enemyPrefabs = new List<GameObject>();
 
         for (int i = 0; i < maxNormalEnemies; i++)
         {
-            GameObject nEnemy =  Instantiate(normalEnemyPrefab);
+            GameObject nEnemy = Instantiate(normalEnemyPrefab);
             nEnemy.SetActive(false);
             enemyPrefabs.Add(nEnemy);
         }
@@ -45,9 +50,9 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
+
     void SpawnEnemy()
     {
         List<GameObject> inactiveEnemies = new List<GameObject>();
